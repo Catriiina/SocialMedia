@@ -4,12 +4,57 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+export type PostType = {
+    id: string,
+    description: string,
+    likesCount: number
+}
+
+export type PostsDataPropsType = {
+    postsData: PostType[]
+}
+
+export const postsData: PostType[] =[
+    {
+        id: "1",
+        description: 'First post',
+        likesCount: 10
+    },
+    {
+        id: "2",
+        description: 'Second post',
+        likesCount: 12
+    }
+
+]
+
+export const messageData:MessageType[] = [
+    {
+        id: "1",
+        message: 'hello!'
+    },
+    {
+        id: "2",
+        message: 'how are you?'
+    }
+
+]
+
+export type  MessageType = {
+    message: string
+    id: string
+}
+
+export type MessageDataPropsType = {
+    messageData: MessageType[]
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <App postsData={postsData} messageData={messageData}/>
   </React.StrictMode>
 );
 

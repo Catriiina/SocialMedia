@@ -1,23 +1,24 @@
 import React from "react";
-import "./Profile.css";
+import {MyPosts} from "./myPosts/MyPosts";
+import { S } from "./Profile_Styles"
+import {ProfileInfo} from "./profileInfo/ProfileInfo";
+import {PostType} from "../../index";
 
-export const Profile = () =>{
+type ProfileProps = {
+    postsData: PostType[];
+}
+
+export const Profile: React.FC<ProfileProps> = ({ postsData }) => {
     return(
-        <div className="content">
-            <div>
-                <img alt="" src="https://images.prom.ua/2122417187_w640_h640_kartina-po-nomeram.jpg"
+        <>
+            <S.ProfileContent>
+                <ProfileInfo
+                    src="https://images.prom.ua/2122417187_w640_h640_kartina-po-nomeram.jpg"
+                    name='Name Surname'
+                    description='information about me and my blog'
                 />
-            </div>
-            <div className="profile-info">
-                <h2>Name Surname </h2>
-                <p>information about me and my blog</p>
-            </div>
-            <div>
-                my posts
-                <div>
-                    new post
-                </div>
-            </div>
-        </div>
+                <MyPosts postsData={postsData}/>
+            </S.ProfileContent>
+        </>
     )
 }

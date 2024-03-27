@@ -4,6 +4,7 @@
 
 .App-logo {
   height: 50px;
+  padding: 10px;
 }
 
 /* начало */
@@ -16,21 +17,30 @@
     "n c";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
+  background-color: antiquewhite;
 }
 
 .nav{
   grid-area: n;
-  background-color: antiquewhite;
+}
+
+.link {
+  color: black;
+}
+
+.link.active {
+  color: #6c3c0c;
 }
 
 .header{
   grid-area: h;
-  background-color: antiquewhite;
+  display: flex;
+
 }
 
 .content{
   grid-area: c;
-  background-color: antiquewhite;
+
 }
 
 .img{
