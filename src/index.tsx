@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
 export type PostType = {
     id: string,
     description: string,
@@ -49,12 +50,33 @@ export type MessageDataPropsType = {
     messageData: MessageType[]
 }
 
+export const dialogsData:DialogType[] = [
+    {
+        id: "1",
+        name: "Katya"
+    },
+    {
+        id: "2",
+        name: "Lisa"
+    }
+
+]
+
+export type  DialogType = {
+    id: string
+    name: string
+}
+
+export type DialogsDataPropsType = {
+    dialogsData: DialogType[]
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App postsData={postsData} messageData={messageData}/>
+    <App postsData={postsData} messageData={messageData} dialogsData={dialogsData} />
   </React.StrictMode>
 );
 

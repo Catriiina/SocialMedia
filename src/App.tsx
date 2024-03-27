@@ -5,9 +5,9 @@ import {Header} from "./components/header/Header";
 import {Navbar} from "./components/navbar/Navbar";
 import {Profile} from "./components/profile/Profile";
 import {Messages} from "./components/messages/Messages";
-import {MessageDataPropsType, PostsDataPropsType} from "./index";
+import {DialogsDataPropsType, MessageDataPropsType, PostsDataPropsType} from "./index";
 
-function App(props: PostsDataPropsType & MessageDataPropsType) {
+function App(props: PostsDataPropsType & MessageDataPropsType & DialogsDataPropsType) {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -16,7 +16,7 @@ function App(props: PostsDataPropsType & MessageDataPropsType) {
                 <div className="content">
                     <Routes>
                         <Route path="/profile" element={<Profile postsData={props.postsData}/>}/>
-                        <Route path="/messages/*" element={<Messages messageData={props.messageData}/>} />
+                        <Route path="/messages/*" element={<Messages messageData={props.messageData} dialogsData={props.dialogsData}/>}/>
                     </Routes>
                 </div>
             </div>
