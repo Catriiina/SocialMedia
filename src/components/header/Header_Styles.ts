@@ -28,7 +28,13 @@ const SearchInput = styled.input`
   border-radius: 4px;
 `;
 
+const Wrapper = styled.div`
+display: flex;
+   align-items: center;
+`
+
 export const S = {
    Header,
-   SearchInput
+   SearchInput,
+   Wrapper
 }

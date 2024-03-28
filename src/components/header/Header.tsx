@@ -5,10 +5,10 @@ import {S} from "./Header_Styles"
 export const Header = () => {
     return (
         <S.Header className="header">
-            <div>
+            <S.Wrapper>
                 <img src={logo} className="App-logo" alt="logo" />
                 <S.SearchInput type="text" className="search-input" placeholder="Поиск..." />
-            </div>
+            </S.Wrapper>
         </S.Header>
     );
 }

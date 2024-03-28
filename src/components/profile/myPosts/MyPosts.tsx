@@ -1,7 +1,7 @@
 import React from "react";
 import {Post} from "./post/Post";
 import {S} from "./MyPosts_Styles"
-import {PostType} from "../../../index";
+import {PostType} from "../../../redux/state";
 
 export const MyPosts: React.FC<{ postsData: PostType[] }> = (props) => {
 
@@ -9,8 +9,16 @@ export const MyPosts: React.FC<{ postsData: PostType[] }> = (props) => {
         props.postsData.map(post =>
             <Post description={post.description} likesCount={post.likesCount}/>);
 
+    // let newPostElement = React.createRef();
+    //
+    // const addPost = () => {
+    //     let text = newPostElement.current.value;
+    //     props.addPost(text);
+    // }
+
     return (
         <S.Div>
+
             <input
                 // type="text"
                 // value={newPostText}
@@ -18,7 +26,7 @@ export const MyPosts: React.FC<{ postsData: PostType[] }> = (props) => {
                 // placeholder="Введите текст нового поста"
             />
             <button
-                // onClick={handleAddPost}
+                // onClick={AddPost}
             >send</button>
             my posts
             {postsElements}
