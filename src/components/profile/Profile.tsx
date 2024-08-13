@@ -5,10 +5,11 @@ import {ProfileInfo} from "./profileInfo/ProfileInfo";
 import {PostType} from "../../redux/state";
 
 type ProfileProps = {
-    postsData: PostType[];
+    postsData: PostType[]
+    addPost: (postMessage: string) => void
 }
 
-export const Profile: React.FC<ProfileProps> = ({ postsData }) => {
+export const Profile: React.FC<ProfileProps> = ({ postsData, addPost }) => {
     return(
         <>
             <S.ProfileContent>
@@ -17,7 +18,7 @@ export const Profile: React.FC<ProfileProps> = ({ postsData }) => {
                     name='Name Surname'
                     description='information about me and my blog'
                 />
-                <MyPosts postsData={postsData}/>
+                <MyPosts postsData={postsData} addPost={addPost}/>
             </S.ProfileContent>
         </>
     )

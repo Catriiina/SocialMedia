@@ -5,7 +5,8 @@ export type PostType = {
 }
 
 export type PostsDataPropsType = {
-    postsData: PostType[]
+    postsData: PostType[],
+    addPost: (postMessage: string) => void;
 }
 
 export type  MessageType = {
@@ -32,9 +33,8 @@ export type RootStateType = {
     messagePage: MessageDataPropsType
 }
 export let state: RootStateType = {
-
-    profilePage:{
-        postsData:[
+    profilePage: {
+        postsData: [
             {
                 id: "1",
                 description: 'First post',
@@ -45,8 +45,12 @@ export let state: RootStateType = {
                 description: 'Second post',
                 likesCount: 12
             }
-        ]
+        ],
+        addPost: (postMessage: string) => {
+            // Реализация addPost
+        }
     },
+
 
     dialogsPage:{
         dialogsData:[
@@ -75,11 +79,12 @@ export let state: RootStateType = {
     },
 }
 
-// export const addPost = (postMessage:string) => {
-//     let newPost: PostType = {
-//         id:"3",
-//         description: postMessage,
-//         likesCount: 0
-//     };
-//     state.profilePage.postsData.push(newPost)
-// }
+export let addPost: (postMessage: string) => void = (postMessage: string) => {
+    debugger;
+    let newPost: PostType = {
+        id:"3",
+        description: postMessage,
+        likesCount: 0
+    };
+    state.profilePage.postsData.push(newPost)
+}
